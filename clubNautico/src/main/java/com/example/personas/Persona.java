@@ -11,10 +11,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "persona")
 @Data
@@ -38,49 +38,6 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Barco> barco;
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
-	public String getNombreCompleto() {
-		return nombreCompleto;
-	}
-
-	public void setNombreCompleto(String nombreCompleto) {
-		this.nombreCompleto = nombreCompleto;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public List<Barco> getBarco() {
-		return barco;
-	}
-
-	public void setBarco(List<Barco> barco) {
-		this.barco = barco;
-	}
-	
-	
-	
-
-	
-	
 }

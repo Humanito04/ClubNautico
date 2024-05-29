@@ -2,13 +2,7 @@ package com.example.personas;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Setter
@@ -31,4 +25,9 @@ public class Salida {
 	private int id_patron;
 
 
+	@ManyToOne
+	private Barco barco;
+
+	@ManyToOne
+	private Persona persona;
 }

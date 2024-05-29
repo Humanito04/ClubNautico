@@ -2,7 +2,6 @@ package com.example.personas;
 
 import java.util.List;
 
-import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,9 +33,18 @@ public class Persona {
 	
 	@Column
 	private String email;
+
+	@Column
+	private int id_socio;
+
+	@Column
+	private int id_patron;
 	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Barco> barco;
+
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Salida> salida;
 
 
 

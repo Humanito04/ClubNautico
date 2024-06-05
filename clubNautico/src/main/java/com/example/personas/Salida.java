@@ -16,13 +16,13 @@ public class Salida {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idSalida;
+	private Integer id;
 
 	private LocalDateTime fecha_hora_salida;
 	
 	private String destino;
 	
-	private int id_patron;
+	private Integer id_patron;
 
 
 	@ManyToOne

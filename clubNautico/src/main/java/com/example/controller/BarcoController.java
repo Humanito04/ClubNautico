@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.personas.Barco;
 import com.example.services.BarcoService;
+import com.example.services.dto.BarcoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +16,8 @@ public class BarcoController {
     private BarcoService barcoService;
 
     @PostMapping
-    public Barco crearBarco(Barco barco){
-        return this.barcoService.crearBarco(barco);
+    public Barco crearBarco(BarcoDTO barcoDTO){
+        return this.barcoService.crearBarco(barcoDTO);
     }
 
     @GetMapping
@@ -25,13 +26,13 @@ public class BarcoController {
     }
 
     @GetMapping("/{id}")
-    public Barco getBarcoById(int id){
+    public Barco getBarcoById(@PathVariable Integer id){
         return this.barcoService.getBarcoById(id);
     }
 
     @PutMapping
-    public Barco actualizarBarco (Barco barco){
-        return this.barcoService.actualizarBarco(barco);
+    public BarcoDTO updateBarco (BarcoDTO barcoDTO, Integer idBarco){
+        return this.barcoService.actualizarBarco(barcoDTO,idBarco);
     }
 
     @DeleteMapping

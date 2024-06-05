@@ -17,7 +17,7 @@ public class Barco {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_barco;
+	private Integer id;
 	
 	private String matricula;
 	
@@ -31,13 +31,13 @@ public class Barco {
 	private double cuota;
 	
 	
-	private int id_socio;
+	private Integer id_socio;
 	
 	@ManyToOne
 	private Persona persona;
 
-	@ManyToOne
-	private Salida salida;
+	@OneToMany(mappedBy = "barco", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Salida> salida;
 
 
 }

@@ -23,7 +23,7 @@ public class Persona {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	@Column
 	private String nombreCompleto;
@@ -35,10 +35,10 @@ public class Persona {
 	private String email;
 
 	@Column
-	private int id_socio;
+	private Integer id_socio;
 
 	@Column
-	private int id_patron;
+	private Integer id_patron;
 	
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Barco> barco;

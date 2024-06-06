@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SalidaService {
@@ -36,19 +35,17 @@ public class SalidaService {
 
    public Salida findSalidaById(Integer idSalida){
        return this.salidaRepository.findById(idSalida).orElseThrow(() ->
-               new RuntimeException("Salida not found with id " + idSalida));
+               new RuntimeException("Salida no encontrada con id  " + idSalida));
    }
 
    public SalidaDTO actualizarSalida(SalidaDTO salidaDTO, Integer idSalida){
        if (idSalida == null) {
-           throw new IllegalArgumentException("IdSalida cannot be null");
+           throw new IllegalArgumentException("IdSalida no puede ser nulo");
        }
        Salida salidaUpdate = this.salidaRepository.findById(idSalida).orElseThrow(()
-               ->new RuntimeException("Salida not found with id" + idSalida));
+               ->new RuntimeException("Salida no encontrada con id " + idSalida));
 
        BeanUtils.copyProperties(salidaDTO, salidaUpdate);
-       Salida actualizaSalida = this.salidaRepository.save(salidaUpdate);
-
        return convertToDto(salidaUpdate);
    }
 

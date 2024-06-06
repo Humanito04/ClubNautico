@@ -34,18 +34,16 @@ public class BarcoService {
 
     public Barco getBarcoById(int idBarco){
         return this.barcoRepo.findById(idBarco).orElseThrow(() ->
-                new RuntimeException("Persona not found with id " + idBarco));
+                new RuntimeException("Barco no encontrado con id " + idBarco));
     }
     public List<Barco> listaBarco(){
         return this.barcoRepo.findAll();
     }
 
     public BarcoDTO actualizarBarco(BarcoDTO barcoDTO, Integer idBarco){
-        Barco barcoUpdate = this.barcoRepo.findById(idBarco).orElseThrow(() ->new RuntimeException(("Barco not found with id "+ idBarco)));
+        Barco barcoUpdate = this.barcoRepo.findById(idBarco).orElseThrow(() ->new RuntimeException(("Barco no encontrado con id "+ idBarco)));
 
         BeanUtils.copyProperties(barcoDTO, barcoUpdate);
-        Barco actualizaBarco = this.barcoRepo.save(barcoUpdate);
-
         return convertToDto(barcoUpdate);
     }
 

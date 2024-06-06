@@ -3,11 +3,11 @@ package com.example.controller;
 import com.example.personas.Salida;
 import com.example.services.SalidaService;
 import com.example.dto.SalidaDTO;
+import com.example.responses.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/salida")
@@ -17,28 +17,38 @@ public class SalidaController {
     private SalidaService salidaService;
 
     @PostMapping
-    public Salida crearSalida(SalidaDTO salidaDTO){
-        return this.salidaService.crearSalida(salidaDTO);
+    public Response<Salida> crearSalida(@RequestBody SalidaDTO salidaDTO){
+        Salida salida = this.salidaService.crearSalida(salidaDTO);
+        return new Response<>("Salida creada correctamente", salida);
     }
 
     @GetMapping
-    public List<Salida> listarSalida(){
-        return this.salidaService.listarSalida();
+    public Response<List<Salida>> listarSalida(){
+        List<Salida> salidas = this.salidaService.listarSalida();
+        return new Response<>("Listado de salidas", salidas);
     }
 
     @GetMapping("/{id}")
-    public Salida buscarSalidaById(@PathVariable Integer id){
-        return this.salidaService.findSalidaById(id);
+    public Response<Salida> buscarSalidaById(@PathVariable Integer id){
+        Salida salida = this.salidaService.findSalidaById(id);
+        return new Response<>("Salida obtenida", salida);
     }
 
-    @PutMapping
-    public SalidaDTO actualizarSalida(SalidaDTO salidaDTO, Integer idSalida){
-        return this.salidaService.actualizarSalida(salidaDTO, idSalida);
+    @PutMapping("/{id}")
+    public Response<SalidaDTO> actualizarSalida(@RequestBody SalidaDTO salidaDTO, @PathVariable Integer id){
+        SalidaDTO salidaActualizada = this.salidaService.actualizarSalida(salidaDTO, id);
+        return new Response<>("Salida actualizada correctamente", salidaActualizada);
     }
 
-    @DeleteMapping
-    public void deleteSalida(Salida salida){
-        this.salidaService.borrarSalida(salida);
+    @DeleteMapping("/{id}")
+    public Response<Void> borrarSalida(@PathVariable Integer id){
+        Salida salida = this.salidaService.findSalidaById(id);
+        if (salida != null) {
+            this.salidaService.borrarSalida(salida);
+            return new Response<>("Salida eliminada correctamente", null);
+        } else {
+            return new Response<>("Salida no encontrada", null);
+        }
     }
-
 }
+

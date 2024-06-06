@@ -19,13 +19,13 @@ public class PersonaController {
     @PostMapping
     public Response<Persona> crearPersona(@RequestBody PersonaDTO personaDTO){
         Persona persona = this.personaService.crearPersona(personaDTO);
-        return new Response<>("Persona creada exitosamente", persona);
+        return new Response<>("Persona creada correctamente", persona);
     }
 
     @GetMapping
     public Response<List<Persona>> listarPersona(){
         List<Persona> personas = this.personaService.listarPersonas();
-        return new Response<>("Listado de personas", personas);
+        return new Response<>("Lista de personas", personas);
     }
 
     @GetMapping("/{id}")
@@ -37,13 +37,13 @@ public class PersonaController {
     @DeleteMapping("/{id}")
     public Response<Void> borrarPersona(@PathVariable Integer id){
         this.personaService.borrarPersona(id);
-        return new Response<>("Persona eliminada exitosamente", null);
+        return new Response<>("Persona eliminada correctamente", null);
     }
 
     @PutMapping("/{id}")
     public Response<PersonaDTO> actualizarPersona(@RequestBody PersonaDTO personaDTO, @PathVariable Integer id){
         PersonaDTO personaActualizada = this.personaService.updatePersona(personaDTO, id);
-        return new Response<>("Persona actualizada exitosamente", personaActualizada);
+        return new Response<>("Persona actualizada correctamente", personaActualizada);
     }
 }
 

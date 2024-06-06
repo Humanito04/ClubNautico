@@ -2,7 +2,7 @@ package com.example.services;
 
 import com.example.personas.Salida;
 import com.example.repositories.SalidaRepository;
-import com.example.services.dto.SalidaDTO;
+import com.example.dto.SalidaDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +34,9 @@ public class SalidaService {
        return salidaS;
    }
 
-   public Optional<Salida> findSalidaById(Integer idSalida){
-       return this.salidaRepository.findById(idSalida);
+   public Salida findSalidaById(Integer idSalida){
+       return this.salidaRepository.findById(idSalida).orElseThrow(() ->
+               new RuntimeException("Salida not found with id " + idSalida));
    }
 
    public SalidaDTO actualizarSalida(SalidaDTO salidaDTO, Integer idSalida){

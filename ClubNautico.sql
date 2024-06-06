@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS clubnautico;
 CREATE DATABASE clubnautico;
 USE clubnautico;
 
@@ -31,16 +32,17 @@ CREATE TABLE salida (
     fecha_hora_salida DATETIME,
     id_patron INT,
     persona_id INT,
+    barco_id INT,
     FOREIGN KEY (persona_id) REFERENCES persona(id)
 );
 
 -- Insertar datos en la tabla salida
-INSERT INTO salida (destino, fecha_hora_salida, id_patron, persona_id) VALUES
-    ('Huelva', '2024-05-31 21:30:00', 1, 1),
-    ('Barcelona', '2024-06-01 12:00:00', 2, 2),
-    ('A Coruña', '2024-07-06 17:15:00', 3, 3),
-    ('Lisboa', '2024-07-26 22:45:00', 3, 3),
-    ('Cadiz', '2024-08-31 07:55:00', 5, 5);
+INSERT INTO salida (destino, fecha_hora_salida, id_patron, persona_id,barco_id) VALUES
+    ('Huelva', '2024-05-31 21:30:00', 1, 1,1),
+    ('Barcelona', '2024-06-01 12:00:00', 2, 2 ,1),
+    ('A Coruña', '2024-07-06 17:15:00', 3, 3, 2),
+    ('Lisboa', '2024-07-26 22:45:00', 3, 3, 3),
+    ('Cadiz', '2024-08-31 07:55:00', 5, 5,4);
 
 -- Consultar datos de la tabla salida
 SELECT * FROM salida;
@@ -70,3 +72,4 @@ INSERT INTO barco (cuota, id_socio, matricula, nombre, num_amarres, persona_id, 
 -- Consultar datos de la tabla barco
 SELECT * FROM barco;
 
+SELECT * FROM persona;

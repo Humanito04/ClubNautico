@@ -2,7 +2,7 @@ package com.example.controller;
 
 import com.example.personas.Salida;
 import com.example.services.SalidaService;
-import com.example.services.dto.SalidaDTO;
+import com.example.dto.SalidaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +27,7 @@ public class SalidaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Salida> buscarSalidaById(@PathVariable Integer id){
+    public Salida buscarSalidaById(@PathVariable Integer id){
         return this.salidaService.findSalidaById(id);
     }
 

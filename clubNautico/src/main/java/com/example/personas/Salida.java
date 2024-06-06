@@ -2,6 +2,7 @@ package com.example.personas;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,8 +27,10 @@ public class Salida {
 
 
 	@ManyToOne
+	@JsonBackReference
 	private Barco barco;
 
 	@ManyToOne
+	@JsonBackReference
 	private Persona persona;
 }

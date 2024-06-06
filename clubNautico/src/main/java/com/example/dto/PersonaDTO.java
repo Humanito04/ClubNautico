@@ -1,4 +1,4 @@
-package com.example.services.dto;
+package com.example.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,6 @@ public class PersonaDTO {
         private Integer id;
         private String nombreCompleto;
         private String dni;
-        private String email;
 
     }
 

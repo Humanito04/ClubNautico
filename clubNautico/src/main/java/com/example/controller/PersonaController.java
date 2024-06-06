@@ -2,7 +2,7 @@ package com.example.controller;
 
 import com.example.personas.Persona;
 import com.example.services.PersonaService;
-import com.example.services.dto.PersonaDTO;
+import com.example.dto.PersonaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +25,19 @@ public class PersonaController {
         return this.personaService.listarPersonas();
     }
 
+    @GetMapping("/{id}")
+    public Persona obtenerPersona(@PathVariable Integer id){
+        return this.personaService.getPersonaById(id);
+    }
+
     @DeleteMapping("/{id}")
-    public void deletePersona(Integer id){
+    public void deletePersona(@PathVariable Integer id){
         this.personaService.borrarPersona(id);
     }
 
 
-    @PutMapping
-    public PersonaDTO actualizarPersona(PersonaDTO personaDTO, Integer idPersona){
-        return this.personaService.actualizarPersona(personaDTO,idPersona);
+    @PutMapping("/{id}")
+    public PersonaDTO actualizarPersona(@RequestBody PersonaDTO personaDTO,@PathVariable Integer id){
+        return this.personaService.updatePersona(personaDTO,id);
     }
 }

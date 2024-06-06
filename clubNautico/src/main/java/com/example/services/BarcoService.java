@@ -2,7 +2,7 @@ package com.example.services;
 
 import com.example.personas.Barco;
 import com.example.repositories.BarcoRepository;
-import com.example.services.dto.BarcoDTO;
+import com.example.dto.BarcoDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,8 @@ public class BarcoService {
     }
 
     public Barco getBarcoById(int idBarco){
-        return this.barcoRepo.findById(idBarco).get();
+        return this.barcoRepo.findById(idBarco).orElseThrow(() ->
+                new RuntimeException("Persona not found with id " + idBarco));
     }
     public List<Barco> listaBarco(){
         return this.barcoRepo.findAll();

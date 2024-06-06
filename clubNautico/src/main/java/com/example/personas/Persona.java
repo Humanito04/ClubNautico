@@ -2,6 +2,7 @@ package com.example.personas;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,9 +42,11 @@ public class Persona {
 	private Integer id_patron;
 	
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonBackReference
 	private List<Barco> barco;
 
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonBackReference
 	private List<Salida> salida;
 
 

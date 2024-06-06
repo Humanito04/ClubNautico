@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "ed5be6a5-1e14-47c5-8944-36767e12ac5f",
+		"name": "ClubNautico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35176732"
+	},
+	"item": [
+		{
+			"name": "Peticiones de personas",
+			"item": [
+				{
+					"name": "Obtener personas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/persona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener persona por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/persona/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar persona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/persona/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/persona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar persona",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/persona/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peticiones de barcos",
+			"item": [
+				{
+					"name": "Obtener barcos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener barco por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar barco",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear barco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar barco",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peticiones de salidas",
+			"item": [
+				{
+					"name": "Obtener salidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/salida",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"salida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener salida por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/salida/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"salida",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar salida",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/barco/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"barco",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear salida",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/salida",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"salida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar salida",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/salida/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"salida",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

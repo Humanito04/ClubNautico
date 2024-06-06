@@ -35,7 +35,7 @@ public class PersonaService {
         if (personaRepo.existsById(id)) {
             personaRepo.deleteById(id);
         } else {
-            throw new RuntimeException("Persona not found with id " + id);
+            throw new RuntimeException("Persona no encontrada con: " + id);
         }
     }
 
@@ -45,12 +45,12 @@ public class PersonaService {
 
     public Persona getPersonaById(Integer id) {
         return this.personaRepo.findById(id).orElseThrow(() ->
-                new RuntimeException("Persona not found with id " + id));
+                new RuntimeException("Persona no encontrada con el id: " + id));
     }
 
     public PersonaDTO updatePersona(PersonaDTO personaDTO, Integer idPersona) {
         Persona personaUpdate = this.personaRepo.findById(idPersona).orElseThrow(() ->
-                new RuntimeException("Persona not found with id " + idPersona));
+                new RuntimeException("Persona no encontrada con el id: " + idPersona));
 
         BeanUtils.copyProperties(personaDTO, personaUpdate);
         this.personaRepo.save(personaUpdate);
